@@ -1,0 +1,598 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="container">
+  <!-- main content -->
+  <div class="tab-content mt-3" id="myTabContent">
+    <h1>{{'شاشة' | translate }} {{'المالكين' | translate }}</h1>
+
+    <div class="row">
+        <div class="col-12">
+          <div class="filter-section">
+
+      <div class="filter-form-container"  [class.active]="isFiltersVisible">
+        <div class="filter-title" (click)="toggleFilters()">
+          <h2 class="d-flex  align-items-center">
+          <i class="fas fa-filter"></i>
+          <span> {{'فلتر' | translate }}</span>
+        
+          <span style="cursor:pointer;">
+        
+            <i class="fas" [ngClass]="isFiltersVisible ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+          </span>
+        </h2>
+        </div>
+        <div class="filter-form" *ngIf="isFiltersVisible">
+          
+        <div class="col">
+          <div class="form-group" >
+            <div class="border p-3">
+              
+              <!-- Grand conteneur pour les trois boîtes de recherche -->
+              <div class="row">
+                <div class="col border-right">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="zoneSelect">{{'تاريخ الإنشاء' | translate }}</label>
+                      <input type="date" class="form-control">
+                                        </div>
+                      <!-- Contenu de la première partie -->
+                     
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button"> {{'البحث' | translate }}</button>
+                      </div>
+                    
+                  </div>
+                </div>
+                <div class="col border-left border-right">
+                  <div class="form-group">
+                      <!-- Contenu de la deuxième partie -->
+                      <div class="form-group">
+                        <label for="zoneSelect">{{'اسم المالك' | translate }}</label>
+                       <input type="text" name="nomLocal" id="">
+                      </div>
+                    
+                  </div>
+                </div>
+                <div class="col border-left">
+                  <div class="form-group">
+                   
+                      <!-- Contenu de la troisième partie -->
+                      <div class="form-group">
+                        <label for="regionSelect">{{'نوع المالك :' | translate }}</label>
+                        <div class="checkbox-group">
+                          <label for="region1">{{'شخص' | translate }}
+                            <input type="checkbox" id="region1" name="region" value="region1">
+                          </label>
+                        </div>
+                        <div class="checkbox-group">
+                          <label for="region1">{{'شركة' | translate }}
+                            <input type="checkbox" id="region1" name="region" value="region1">
+                          </label>
+                        </div> 
+                      </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+
+    <!-- user table -->
+    <div class="container">
+      <div class="row">
+   <div class="col-12">
+     <div class="button-section">
+   <div class="row flex-lg-nowrap">
+     <div class="col-12 col-lg-auto mb-3" style="width: 10px;">
+ 
+     </div>
+     <div class="container">  
+       <div class="button-container">
+         <input  class="fas fa-search" type="text" class="filter-input" placeholder=" {{'البحث' | translate }}">
+         <button class="print-button" onclick="window.print()">
+           <i class="fas fa-print"></i> {{'طباعة' | translate }}
+         </button>
+         <button class="new-local-button" routerLink="/propritaire/ajouterProprietaire">{{'مالك جديد' | translate }}</button>
+       </div>
+   
+       <div class="row flex-lg-nowrap">
+         <div class="col mb-3">
+           <div class="e-panel card">
+             <div class="card-body">
+               <div class="card-title">
+                
+               </div>
+               <div class="e-table">
+                 <div class="table-responsive table-lg mt-3">
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th class="align-top">
+                           <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                             <input type="checkbox" class="custom-control-input" id="all-items">
+                             <label class="custom-control-label" for="all-items"></label>
+                           </div>
+                         </th>
+                         <th>{{'صورة المالك' | translate }}</th>
+                         <th class="max-width">{{'اسم المالك' | translate }}</th>
+                         <th class="sortable">{{'نوع المالك' | translate }}</th>
+                         <th> {{ 'الهاتف' | translate }} </th>
+                         <th> {{'منطقة' | translate }} </th>
+
+                         <th> {{'نوع المحل' | translate }} </th>
+                         <th> {{'فئة' | translate }} </th>
+                         <th> {{'مالك' | translate }} </th>
+                         <th> {{'عنوان' | translate }} </th>
+                         <th> {{'أجراءات' | translate }} </th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td class="align-middle">
+                           <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                             <input type="checkbox" class="custom-control-input" id="item-1">
+                             <label class="custom-control-label" for="item-1"></label>
+                           </div>
+                         </td>
+                         <td class="align-middle text-center">
+                           <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 20px; height: 20px;"><img src="assets/images/homme.jpg" style="   height: 40px; width: 40px;"></div>
+                         </td>
+                         <td class="text-nowrap align-middle">Amine Mallek</td>
+                         <td class="text-nowrap align-middle"><span>Personne Phyisique</span></td>
+                         <td class="text-nowrap align-middle">
+                           24758320
+                         </td>
+                         
+                         <td class="text-nowrap align-middle">
+                           Sfax sud
+                         </td>
+                         <td class="text-nowrap align-middle">
+                           Pharmacie
+                         </td>
+                         <td class="text-nowrap align-middle">
+                             Santé
+                         </td>
+                        <td class="text-nowrap align-middle">
+                           Amine Mallek
+                        </td>
+                        <td class=" align-middle">
+                         Markez Sahnoun  
+                        </td>
+                         <td class="text-nowrap align-middle" style="width: 20%;">
+                           <a href="#" class="table-link">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link"data-toggle="modal" data-target="#editModal">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link danger"  style="color: rgb(212, 46, 46);">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                       </td>
+                       </tr>
+                       <tr>
+                         <td class="align-middle">
+                           <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                             <input type="checkbox" class="custom-control-input" id="item-2">
+                             <label class="custom-control-label" for="item-2"></label>
+                           </div>
+                         </td>
+                         <td class="align-middle text-center">
+                           <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                         </td>
+                         <td class="text-nowrap align-middle">Pauline Noble</td>
+                         <td class="text-nowrap align-middle"><span>26 Jan 2018</span></td>
+                          <td>
+
+                         </td>
+
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                        <td>
+                         
+                        </td>
+                        <td>
+
+                        </td>
+                         <td style="width: 20%;">
+                           <a href="#" class="table-link">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link" data-toggle="modal" data-target="#editModal">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link danger"  style="color: rgb(212, 46, 46);">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                       </td>
+                       </tr>
+                       <tr>
+                         <td class="align-middle">
+                           <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                             <input type="checkbox" class="custom-control-input" id="item-3">
+                             <label class="custom-control-label" for="item-3"></label>
+                           </div>
+                         </td>
+                         <td class="align-middle text-center">
+                           <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                         </td>
+                         <td class="text-nowrap align-middle">Sherilyn Metzel</td>
+                         <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>
+                         <td>
+
+                         </td>
+
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                        <td>
+                         
+                        </td>
+                        <td>
+
+                        </td>
+                         <td style="width: 20%;">
+                           <a href="#" class="table-link">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link" data-toggle="modal" data-target="#editModal">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link danger"  style="color: rgb(212, 46, 46);">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                       </td>
+                       </tr>
+                       <tr>
+                         <td class="align-middle">
+                           <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                             <input type="checkbox" class="custom-control-input" id="item-4">
+                             <label class="custom-control-label" for="item-4"></label>
+                           </div>
+                         </td>
+                         <td class="align-middle text-center">
+                           <div class="bg-light d-inline-flex justify-content-center align-items-center align-top" style="width: 35px; height: 35px; border-radius: 3px;"><i class="fa fa-fw fa-photo" style="opacity: 0.8;"></i></div>
+                         </td>
+                         <td class="text-nowrap align-middle">Terrie Boaler</td>
+                         <td class="text-nowrap align-middle"><span>20 Jan 2018</span></td>
+                         <td>
+
+                         </td>
+
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                         <td>
+
+                         </td>
+                        <td>
+                         
+                        </td>
+                        <td>
+
+                        </td>
+                         <td style="width: 20%;">
+                           <a href="#" class="table-link">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link" data-toggle="modal" data-target="#editModal">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                           <a href="#" class="table-link danger" style="color: rgb(212, 46, 46);">
+                               <span class="fa-stack">
+                                   <i class="fa fa-square fa-stack-2x"></i>
+                                   <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                               </span>
+                           </a>
+                       </td>
+                       </tr>
+                       
+                      
+                     </tbody>
+                   </table>
+                 </div>
+                 <div class="d-flex justify-content-center">
+                   <ul class="pagination mt-3 mb-0">
+                     <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+                     <li class="active page-item"><a href="#" class="page-link">1</a></li>
+                     <li class="page-item"><a href="#" class="page-link">2</a></li>
+                     <li class="page-item"><a href="#" class="page-link">3</a></li>
+                     <li class="page-item"><a href="#" class="page-link">4</a></li>
+                     <li class="page-item"><a href="#" class="page-link">5</a></li>
+                     <li class="page-item"><a href="#" class="page-link">›</a></li>
+                     <li class="page-item"><a href="#" class="page-link">»</a></li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                       </button>
+                   </div>
+                   <div class="modal-body">
+                       <!-- Your form for editing data goes here -->
+                       <form class="form" novalidate>
+                         <div class="row">
+                           <div class="container">
+                           <div class="col">
+                             <div class="form-group">
+                               <label>{{'اسم المحل' | translate }}</label>
+                               <input class="form-control" type="text" name="name" placeholder="" value="">
+                              
+                             </div>
+                           </div>
+                           </div>
+                           <div class="container">
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="localeType">{{'نوع المحل' | translate }}</label>
+                                 <div class="input-group">
+                                   <select class="form-control" id="localeType">
+                                     <!-- Options -->
+                                   </select>
+                                  
+                                 </div>
+                               </div>
+                               <!-- Repeat structure for other fields as needed -->
+                             </div>
+                           </div>
+                           <div class="container">
+                         
+                               <div class="col">
+                                 <div class="form-group">
+                                   <label for="categorie">{{'فئة' | translate }}</label>
+                                   <div class="input-group">
+                                     <select class="form-control" id="categorie">
+                                       <!-- Options -->
+                                     </select>
+                                   
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                     
+                       
+                       <form class="form" novalidate>
+                         <div class="row">
+                           <div class="container">
+                       
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="categorie">{{'مالك' | translate }}</label>
+                                 <div class="input-group">
+                                   <select class="form-control" id="categorie">
+                                     <!-- Options -->
+                                   </select>
+                                  
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         
+                           <div class="container">
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="region">{{'إقليم' | translate }}</label>
+                                 <select class="form-control" id="region" name="region">
+                                   <option value="region1"></option>
+                                   <option value="region2"></option>
+                                   <option value="region3"></option>
+                                 </select>
+                               </div>
+                             </div>
+                           </div>
+                           <div class="container">
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="zone">{{'منطقة' | translate }}</label>
+                                 <select class="form-control" id="zone" name="zone">
+                                   <option value="zone1"></option>
+                                   <option value="zone2"> </option>
+                                   <option value="zone3"></option>
+                                 </select>
+                               </div>
+                             </div>
+                           </div>
+                           <div class="container">
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="dateCreation">{{'تاريخ الإنشاء' | translate }}</label>
+                                 <input class="form-control" type="date" id="dateCreation" name="dateCreation">
+                               </div>
+                             </div>
+                           </div>
+                           <div class="container">
+                             <div class="col">
+                               <div class="form-group">
+                                 <label for="adresseComplete">{{'عنوان' | translate }}</label>
+                                 <textarea class="form-control" id="adresseComplete" name="adresseComplete" rows="3"></textarea>
+                               </div>
+                             </div>
+                           </div>
+                           <div class="col d-flex justify-content-end">
+                             <button class="btn btn-secondary mr-2" type="button" onclick="cancelForm()">{{'الغاء' | translate }}</button>
+                             <button class="btn btn-primary" type="submit">{{'حفظ التغييرات' | translate }}</button>
+                           </div>
+                         </div>
+                       </form>
+                
+
+    <button [hidden]="true" type="button" id="openUserInfo" data-toggle="modal" data-target="#viewUserModal">
+    </button>
+    <button [hidden]="true" type="button" id="openUserEdit" data-toggle="modal" data-target="#editUserModal">
+    </button>
+    
+    <style>
+      body{
+  margin-top:20px;
+  background:#f8f8f8
+}
+.add-button {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 15px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 5px;
+}
+body {
+ font-family: Arial, sans-serif;
+ background-color: #f8f8f8;
+ margin-top: 20px;
+}
+
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+}
+
+.button-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+}
+
+.filter-input {
+ flex-grow: 1;
+ margin-right: 10px;
+ margin-left: 20px;
+ padding: 10px 10px;
+ box-sizing: border-box;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+.print-button {
+      background-color: #167fdc;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+     border: solid;
+      cursor: pointer;
+    }
+    .new-local-button {
+      background-color: #04a02b;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+     border: solid;
+      cursor: pointer;
+    }
+
+.search-button {
+ background-color: #337ab7;
+ border: none;
+ color: white;
+ padding: 5px 10px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 14px;
+ border-radius: 5px;
+ cursor: pointer;
+}
+/* CSS for the parent container */
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.ji {
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* CSS for both sections */
+.filter-section,
+.button-section {
+background-color: #ffffff;
+
+
+border-radius: 5px;
+}
+
+/* Optional: Adjust margin between sections */
+
+
+  </style>
+      

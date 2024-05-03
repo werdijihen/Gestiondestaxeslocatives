@@ -1,0 +1,636 @@
+ 
+ 
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <div class="container">
+     <h1>{{'إنشاء محل' | translate }}</h1>
+     <form class="form" novalidate>
+       <div class="row">
+         <div class="container">
+         <div class="col">
+           <div class="form-group">
+             <label>{{'اسم المحل' | translate }}</label>
+             <input class="form-control" type="text" name="name" placeholder="" value="">
+            
+           </div>
+         </div>
+         </div>
+         <div class="container">
+          <div class="col">
+              <div class="form-group">
+                  <label for="localeType">{{'نوع المحل' | translate }}</label>
+                  <div class="input-group">
+                      <select class="form-control" id="localeType">
+                          <!-- Options -->
+                      </select>
+                      <span class="input-group-append">
+                          <button class="btn btn-outline-secondary add-button" type="button" data-toggle="modal" data-target="#exampleModal" style="margin-top: 0%;height: 40px;">
+                              <i class="fa fa-search"></i>
+                          </button>
+                          <button class="btn btn-outline-secondary add-button" type="button" style="margin-top: 0%;height: 40px;">
+                              <i class="fa fa-times"></i>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="filter-section">
+        
+              <div class="filter-form-container"  [class.active]="isFiltersVisible">
+                <div class="filter-title" (click)="toggleFilters()">
+                  <h2 class="d-flex  align-items-center">
+                  <i class="fas fa-filter"></i>
+                  <span> {{'فلتر' | translate }}</span>
+                
+                  <span style="cursor:pointer;">
+                
+                    <i class="fas" [ngClass]="isFiltersVisible ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                  </span>
+                </h2>
+                </div>
+                <div class="filter-form" *ngIf="isFiltersVisible">
+                  
+                <div class="col">
+                  <div class="form-group" >
+                    <div class="border p-3">
+                      
+                      <!-- Grand conteneur pour les trois boîtes de recherche -->
+                      <div class="row">
+                        <div class="col ">
+                          <div class="form-group">
+                            <div class="form-group">
+                              <label for="zoneSelect">{{'تاريخ الإنشاء' | translate }}</label>
+                              <input type="date" class="form-control">
+                                                </div>
+                              <!-- Contenu de la première partie -->
+                             
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"> {{'البحث' | translate }}</button>
+                              </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col border-left border-right">
+                          <div class="form-group">
+                              <!-- Contenu de la deuxième partie -->
+                              <div class="form-group">
+                                <label for="zoneSelect">{{'اسم المحل' | translate }}</label>
+                               <input type="text" name="nomLocal" id="">
+                              </div>
+                          
+                          </div>
+                        </div>
+                        <div class="col ">
+                          <div class="form-group">
+                              <!-- Contenu de la troisième partie -->
+                              <div class="form-group">
+                                <label for="regionSelect">{{'اختر الاقليم:' | translate }}</label>
+                                <select class="form-control" id="regionSelect">
+                                  <option value=""></option>
+                                  <option value="region1">Sfax</option>
+                                  <option value="region2">Tunis</option>
+                                  <option value="region3">Sousse</option>
+                                  <!-- Ajoutez d'autres options de région si nécessaire -->
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="zoneSelect">{{'اختر المنطقة:' | translate }}</label>
+                                <select class="form-control" id="zoneSelect">
+                                  <option value=""></option>
+                                  <option value="zone1">Sfax Ville</option>
+                                  <option value="zone2">Sfax Sud</option>
+                                  <option value="zone3">Sfax Ouest</option>
+                                  <option value="zone2">Sakiet Ezzit</option>
+        
+                                  <!-- Ajoutez d'autres options de zone si nécessaire -->
+                                </select>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Votre formulaire de recherche ici -->
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Example textarea</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-primary">Sauvegarder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="container">
+        <div class="col">
+            <div class="form-group">
+                <label for="categorie">{{'فئة' | translate }}</label>
+                <div class="input-group">
+                    <select class="form-control" id="categorie">
+                        <!-- Options -->
+                    </select>
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-secondary add-button" type="button" data-toggle="modal" data-target="#categoriee" style="margin-top: 0%;height: 40px;">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary add-button" type="button" style="margin-top: 0%;height: 40px;">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="categoriee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="filter-section">
+      
+            <div class="filter-form-container"  [class.active]="isFiltersVisible">
+              <div class="filter-title" (click)="toggleFilters()">
+                <h2 class="d-flex  align-items-center">
+                <i class="fas fa-filter"></i>
+                <span> {{'فلتر' | translate }}</span>
+              
+                <span style="cursor:pointer;">
+              
+                  <i class="fas" [ngClass]="isFiltersVisible ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+              </h2>
+              </div>
+              <div class="filter-form" *ngIf="isFiltersVisible">
+                
+              <div class="col">
+                <div class="form-group" >
+                  <div class="border p-3">
+                    
+                    <!-- Grand conteneur pour les trois boîtes de recherche -->
+                    <div class="row">
+                      <div class="col ">
+                        <div class="form-group">
+                          <div class="form-group">
+                            <label for="zoneSelect">{{'تاريخ الإنشاء' | translate }}</label>
+                            <input type="date" class="form-control">
+                                              </div>
+                            <!-- Contenu de la première partie -->
+                           
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" type="button"> {{'البحث' | translate }}</button>
+                            </div>
+                          
+                        </div>
+                      </div>
+                      <div class="col border-left border-right">
+                        <div class="form-group">
+                            <!-- Contenu de la deuxième partie -->
+                            <div class="form-group">
+                              <label for="zoneSelect">{{'اسم المحل' | translate }}</label>
+                             <input type="text" name="nomLocal" id="">
+                            </div>
+                        
+                        </div>
+                      </div>
+                      <div class="col ">
+                        <div class="form-group">
+                            <!-- Contenu de la troisième partie -->
+                            <div class="form-group">
+                              <label for="regionSelect">{{'اختر الاقليم:' | translate }}</label>
+                              <select class="form-control" id="regionSelect">
+                                <option value=""></option>
+                                <option value="region1">Sfax</option>
+                                <option value="region2">Tunis</option>
+                                <option value="region3">Sousse</option>
+                                <!-- Ajoutez d'autres options de région si nécessaire -->
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="zoneSelect">{{'اختر المنطقة:' | translate }}</label>
+                              <select class="form-control" id="zoneSelect">
+                                <option value=""></option>
+                                <option value="zone1">Sfax Ville</option>
+                                <option value="zone2">Sfax Sud</option>
+                                <option value="zone3">Sfax Ouest</option>
+                                <option value="zone2">Sakiet Ezzit</option>
+      
+                                <!-- Ajoutez d'autres options de zone si nécessaire -->
+                              </select>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                </div>
+              </div>
+            </div>
+            <!-- Votre formulaire de recherche ici -->
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'نوع المحل' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل النوع' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="modal fade" id="cat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'فئة' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل الفئة' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>  
+           
+       <div class="modal fade" id="Proprietaire" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'مالك' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل المالك' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>  
+                    
+              
+       <form class="form" novalidate>
+         <div class="row">
+           <div class="container">
+       
+             <div class="col">
+               <div class="form-group">
+                 <label for="categorie">{{'مالك' | translate }}</label>
+                 <div class="input-group">
+                   <select class="form-control" id="categorie">
+                     <!-- Options -->
+                   </select>
+                   <span class="input-group-append">
+                    <button class="btn btn-outline-secondary add-button" type="button" data-toggle="modal" data-target="#prop" style="margin-top: 0%;height: 40px;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary add-button" type="button" style="margin-top: 0%;height: 40px;">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="prop" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="filter-section">
+  
+        <div class="filter-form-container"  [class.active]="isFiltersVisible">
+          <div class="filter-title" (click)="toggleFilters()">
+            <h2 class="d-flex  align-items-center">
+            <i class="fas fa-filter"></i>
+            <span> {{'فلتر' | translate }}</span>
+          
+            <span style="cursor:pointer;">
+          
+              <i class="fas" [ngClass]="isFiltersVisible ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+            </span>
+          </h2>
+          </div>
+          <div class="filter-form" *ngIf="isFiltersVisible">
+            
+          <div class="col">
+            <div class="form-group" >
+              <div class="border p-3">
+                
+                <!-- Grand conteneur pour les trois boîtes de recherche -->
+                <div class="row">
+                  <div class="col ">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label for="zoneSelect">{{'تاريخ الإنشاء' | translate }}</label>
+                        <input type="date" class="form-control">
+                                          </div>
+                        <!-- Contenu de la première partie -->
+                       
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button"> {{'البحث' | translate }}</button>
+                        </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col border-left border-right">
+                    <div class="form-group">
+                        <!-- Contenu de la deuxième partie -->
+                        <div class="form-group">
+                          <label for="zoneSelect">{{'اسم المحل' | translate }}</label>
+                         <input type="text" name="nomLocal" id="">
+                        </div>
+                    
+                    </div>
+                  </div>
+                  <div class="col ">
+                    <div class="form-group">
+                        <!-- Contenu de la troisième partie -->
+                        <div class="form-group">
+                          <label for="regionSelect">{{'اختر الاقليم:' | translate }}</label>
+                          <select class="form-control" id="regionSelect">
+                            <option value=""></option>
+                            <option value="region1">Sfax</option>
+                            <option value="region2">Tunis</option>
+                            <option value="region3">Sousse</option>
+                            <!-- Ajoutez d'autres options de région si nécessaire -->
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="zoneSelect">{{'اختر المنطقة:' | translate }}</label>
+                          <select class="form-control" id="zoneSelect">
+                            <option value=""></option>
+                            <option value="zone1">Sfax Ville</option>
+                            <option value="zone2">Sfax Sud</option>
+                            <option value="zone3">Sfax Ouest</option>
+                            <option value="zone2">Sakiet Ezzit</option>
+  
+                            <!-- Ajoutez d'autres options de zone si nécessaire -->
+                          </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+          </div>
+        </div>
+        <!-- Votre formulaire de recherche ici -->
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="region">{{'إقليم' | translate }}</label>
+                 <select class="form-control" id="region" name="region">
+                   <option value="region1"></option>
+                   <option value="region2"></option>
+                   <option value="region3"></option>
+                 </select>
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="zone">{{'منطقة' | translate }}</label>
+                 <select class="form-control" id="zone" name="zone">
+                   <option value="zone1"></option>
+                   <option value="zone2"> </option>
+                   <option value="zone3"></option>
+                 </select>
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="dateCreation">{{'تاريخ الإنشاء' | translate }}</label>
+                 <input class="form-control" type="date" id="dateCreation" name="dateCreation">
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="adresseComplete">{{'عنوان' | translate }}</label>
+                 <textarea class="form-control" id="adresseComplete" name="adresseComplete" rows="3"></textarea>
+               </div>
+             </div>
+           </div>
+           <div class="col d-flex justify-content-end">
+             <button class="btn btn-secondary mr-2" type="button" onclick="cancelForm()">{{'الغاء' | translate }}</button>
+             <button class="btn btn-primary" type="submit">{{'حفظ التغييرات' | translate }}</button>
+           </div>
+         </div>
+       </form>
+  
+   
+   <style>
+     body {
+       margin-top: 20px;
+       background: #f8f8f8;
+     }
+     
+     .add-button {
+       background-color: #4CAF50;
+       border: none;
+       color: white;
+       padding: 15px 25px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       margin: 4px 2px;
+       cursor: pointer;
+       border-radius: 5px;
+     }
+     body {
+     margin-top: 20px;
+     background: #f8f8f8;
+ }
+ 
+ .add-button {
+     background-color: #007bff;
+     border: none;
+     color: white;
+     padding: 10px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 5px;
+     cursor: pointer;
+     border-radius: 5px;
+ }
+ 
+ .form-group {
+     margin-bottom: 10px;
+ }
+ 
+ .form-control {
+     border-radius: 5px;
+ }
+ 
+   </style>

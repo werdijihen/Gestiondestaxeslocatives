@@ -1,0 +1,105 @@
+
+<html>
+  <head>
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <nav class="profile-navbar">
+    <ul class="navH">
+        <li>
+            <a (click)="changeTitle('Profile')" data-toggle="tab" routerLink="/profile">
+                <i class="fa fa-user fa-2x"></i>
+                <span class="nav-text">
+                  {{'مرحبا' | translate }}, {{user?.firstName}}
+                </span>
+            </a>
+        </li>  
+        <li class="has-subnav">
+      
+          <a class="nav-item nav-link ml-auto"  > 
+            <select name="form-select"  (change)="ChangeLang($event)">
+              <option [selected]="lang==='ar'" value="ar" [defaultSelected]="">عربية</option>
+              <option [selected]="lang==='en'" value="en">En</option>
+              <option [selected]="lang==='fr'" value="fr">Fr</option>
+              
+            </select>
+            
+          </a>
+           
+        </li>
+    </ul>
+    
+</nav>
+  <body><div class="area"></div><nav class="main-menu"   (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+            <ul>
+
+              <li class="has-subnav" >
+                <a (click)="toggleDropdown('Parametrage')" data-toggle="tab"  >
+                    <i class="fa fa-cogs fa-2x"></i>
+                    <span class="nav-text">
+                      {{'ضبط' | translate }}
+                    </span>
+                    <i class="fa fa-chevron-down"></i> <!-- Dropdown Icon -->
+                  </a>
+                  
+                  <ul class="subnav" [style.display]="isDropdownOpen('Parametrage') ? 'block' : 'none'">
+                    <li><a routerLink="/">{{ 'النشاط' | translate }}</a></li>
+                    <li><a routerLink="/">{{ 'صفة المحل' | translate }}</a></li>
+                    <li><a routerLink="/">{{ 'المنطقة' | translate }}</a></li>
+                    <li><a routerLink="/">{{ 'الأماكن' | translate }}</a></li>
+                    <li><a routerLink="/propritaire">{{'المالكين'| translate }}</a></li>
+                    <li><a routerLink="/locaux">{{ 'المحلات' | translate }}</a></li>
+                  </ul>
+            </li>
+
+                
+
+                <li class="has-subnav" >
+                    <a (click)="toggleDropdown('autoritation')" data-toggle="tab"  >
+                        <i class="fa fa-book  fa-2x"></i>
+                        <span class="nav-text">
+                          {{'إدارة الترخيص' | translate }}
+                        </span>
+                        <i class="fa fa-chevron-down"></i> <!-- Dropdown Icon -->
+                      </a>
+                      
+                      <ul class="subnav" [style.display]="isDropdownOpen('autoritation') ? 'block' : 'none'">
+                        <li><a routerLink="/user/list">{{'اللافتات الإعلانية' | translate }}</a></li>
+                        <li><a routerLink="/user/create">{{ 'احتلال الطريق العام' | translate }}</a></li>
+                      </ul>
+                </li>
+
+
+              
+                <li class="has-subnav" >
+                  <a (click)="toggleDropdown('administration')" data-toggle="tab"  >
+                      <i class="fa fa-cogs fa-2x"></i>
+                      <span class="nav-text">
+                        {{'إعدادات النظام' | translate }}
+                      </span>
+                      <i class="fa fa-chevron-down"></i> <!-- Dropdown Icon -->
+                    </a>
+                    
+                    <ul class="subnav" [style.display]="isDropdownOpen('administration') ? 'block' : 'none'">
+                      <li><a routerLink="/user/list">{{ 'شاشة' | translate }}</a></li>
+                      <li><a routerLink="/user/management">{{ 'ملف تعريفي للمستخدم' | translate }}</a></li>
+                      <li><a routerLink="/user/management">{{ 'حساب المستخدم' | translate }}</a></li>
+                    </ul>
+              </li>
+           
+
+            
+            <li>
+              <a (click)="changeTitle('Dashboard')" data-toggle="tab" routerLink="/dashboard">
+                  <i class="fa fa-tachometer fa-2x"></i>
+                  <span class="nav-text">
+                    {{'الإحصائيات'| translate }}
+                  </span>
+              </a>
+            
+          </li>
+          
+            </ul>
+
+        </nav>
+  </body>
+    </html>

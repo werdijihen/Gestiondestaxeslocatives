@@ -18,6 +18,12 @@
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+    "strictInjectionParameters": true,
+    "enableIvy": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "other_directories/**/*.ts",
+    "app/propritaire/propritaire.component.ts" // Ensure this line is present
+  ]
 }

@@ -1,0 +1,248 @@
+ 
+ 
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+ <div class="container">
+     <h1>{{'إنشاء مالك' | translate }}</h1>
+     <form class="form" novalidate>
+       <div class="row">
+         <div class="container">
+         <div class="col">
+           <div class="form-group">
+             <label>{{'اسم المالك' | translate }}</label>
+             <input class="form-control" type="text" name="name" placeholder="" value="">
+            
+           </div>
+         </div>
+         </div>
+         <div class="container">
+           <div class="col">
+             <div class="form-group">
+               <label for="localeType">{{'نوع المحل' | translate }}</label>
+               <div class="input-group">
+                 <select class="form-control" id="localeType">
+                   <!-- Options -->
+                 </select>
+                 <span class="input-group-append">
+                   <button class="btn btn-outline-secondary add-button"   type="button" data-toggle="modal" data-target="#exampleModal" style="margin-top: 0%;height: 40px;" >+</button>
+                 </span>
+               </div>
+             </div>
+             <!-- Repeat structure for other fields as needed -->
+           </div>
+         </div>
+         <div class="container">
+       
+             <div class="col">
+               <div class="form-group">
+                 <label for="categorie">{{'فئة' | translate }}</label>
+                 <div class="input-group">
+                   <select class="form-control" id="categorie">
+                     <!-- Options -->
+                   </select>
+                   <div class="input-group-append">
+                     <button class="btn btn-outline-secondary add-button" type="button" data-toggle="modal" data-target="#cat" style="margin-top: 1px; margin-bottom: 1px; height: 40px; ">+</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+   
+     
+     
+        
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'نوع المحل' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل النوع' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="modal fade" id="cat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'فئة' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل الفئة' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>  
+           
+       <div class="modal fade" id="Proprietaire" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">{{'إضافة البيانات' | translate }}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">×</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <div class="form-group">
+                 <label for="threadTitle">{{'مالك' | translate }}</label>
+                 <input type="text" class="form-control" id="threadTitle" placeholder="{{'أدخل المالك' | translate }}" autofocus />
+               </div>
+               <textarea class="form-control summernote" style="display: none;"></textarea>
+              
+                 <div class="custom-file form-control-sm mt-1" >
+               </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-light" data-dismiss="modal">{{'الغاء' | translate }}</button>
+               <button type="button" class="btn btn-primary" onclick="saveData()">{{'حفظ' | translate }}</button>
+             </div>
+           </div>
+         </div>
+       </div>  
+                    
+              
+       <form class="form" novalidate>
+         <div class="row">
+           <div class="container">
+       
+             <div class="col">
+               <div class="form-group">
+                 <label for="categorie">{{'مالك' | translate }}</label>
+                 <div class="input-group">
+                   <select class="form-control" id="categorie">
+                     <!-- Options -->
+                   </select>
+                   <div class="input-group-append">
+                     <button class="btn btn-outline-secondary add-button" type="button" data-toggle="modal" data-target="#Proprietaire" style="margin-top: 1px; margin-bottom: 1px; height: 40px; ">+</button>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="region">{{'إقليم' | translate }}</label>
+                 <select class="form-control" id="region" name="region">
+                   <option value="region1"></option>
+                   <option value="region2"></option>
+                   <option value="region3"></option>
+                 </select>
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="zone">{{'منطقة' | translate }}</label>
+                 <select class="form-control" id="zone" name="zone">
+                   <option value="zone1"></option>
+                   <option value="zone2"> </option>
+                   <option value="zone3"></option>
+                 </select>
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="dateCreation">{{'تاريخ الإنشاء' | translate }}</label>
+                 <input class="form-control" type="date" id="dateCreation" name="dateCreation">
+               </div>
+             </div>
+           </div>
+           <div class="container">
+             <div class="col">
+               <div class="form-group">
+                 <label for="adresseComplete">{{'عنوان' | translate }}</label>
+                 <textarea class="form-control" id="adresseComplete" name="adresseComplete" rows="3"></textarea>
+               </div>
+             </div>
+           </div>
+           <div class="col d-flex justify-content-end">
+             <button class="btn btn-secondary mr-2" type="button" onclick="cancelForm()">{{'الغاء' | translate }}</button>
+             <button class="btn btn-primary" type="submit">{{'حفظ التغييرات' | translate }}</button>
+           </div>
+         </div>
+       </form>
+  
+   
+   <style>
+     body {
+       margin-top: 20px;
+       background: #f8f8f8;
+     }
+     
+     .add-button {
+       background-color: #4CAF50;
+       border: none;
+       color: white;
+       padding: 15px 25px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       margin: 4px 2px;
+       cursor: pointer;
+       border-radius: 5px;
+     }
+     body {
+     margin-top: 20px;
+     background: #f8f8f8;
+ }
+ 
+ .add-button {
+     background-color: #007bff;
+     border: none;
+     color: white;
+     padding: 10px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 5px;
+     cursor: pointer;
+     border-radius: 5px;
+ }
+ 
+ .form-group {
+     margin-bottom: 10px;
+ }
+ 
+ .form-control {
+     border-radius: 5px;
+ }
+ 
+   </style>

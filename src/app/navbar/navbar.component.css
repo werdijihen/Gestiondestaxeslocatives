@@ -1,0 +1,335 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+body {
+  direction: rtl; /* Right-to-left direction */
+  text-align: right; /* Align text to the right */
+}
+
+
+.fa-2x {
+font-size: 2em;
+}
+.fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+.nav-item select {
+    font-size: 16px; /* Match the font size to your sidebar text */
+    color: #fff; /* Adjust the color to match your sidebar text */
+    background-color: #5d6268; /* Adjust the background color to match your sidebar */
+    border: none; /* Remove border */
+    padding: 15px 15px; /* Add padding to match the sidebar links */
+    margin: 5px 0; /* Add some margin if needed */
+    width: 70px; /* Set width to fill the container */
+    box-sizing: border-box; /* Include padding and border in the width */
+    -webkit-appearance: none; /* Remove default style of select dropdown */
+    -moz-appearance: none; /* Remove default style of select dropdown */
+    appearance: none; /* Remove default style of select dropdown */
+    border-radius: 7px; /* Optional: if your sidebar links have rounded corners */
+  }
+  .nav-item select {
+    background-image: url('https://www.shutterstock.com/image-illustration/arrow-icon-on-white-background-260nw-1797792229.jpg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 12px; /* Adjust the size of your arrow icon */
+  }
+  
+  /* Adjust styles for when the select box is focused */
+  .nav-item select:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1); /* Optional: add a custom focus style */
+  }
+  
+  /* Styles for options inside the select element */
+  .nav-item select option {
+    background-color: #5d6268; /* Slightly darker background for options */
+    color: #fff; /* Text color for options */
+  }
+.main-menu:hover,nav.main-menu.expanded {
+width:260px;
+overflow:visible;
+}
+
+.main-menu {
+background:#7c7e81;
+border-right:1px solid #e5e5e5;
+position:fixed;
+top:0;
+bottom:0;
+height:100%;
+right:0;
+width:50px;
+overflow:hidden;
+transition: width 0.1s ease;
+-webkit-transition:width 0.2s linear;
+transition:width 0.2s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+.main-menu>ul {
+margin:9px 0;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:260px;
+transition: width 0.5s ease;
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#ffffff;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+margin:8px;
+
+
+
+
+  
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:200px;
+font-family: 'Titillium Web', sans-serif;
+}
+.main-menu>ul.navH {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin-right:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:#54575a;
+}
+.area {
+float: left;
+background: #e2e2e2;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+.language-selector select {
+  background-image: url('/path/to/default-flag.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 20px; /* Make space for the flag */
+}
+
+
+
+
+/* Ensure the main content is not hidden behind the navbar */
+body {
+  padding-top: 50px; /* Adjust this value to the height of your navbar */
+}
+.profile-navbar {
+  display: flex; /* Active Flexbox pour la navbar */
+  justify-content: flex-start; /* Alignement des éléments au début (à gauche) */
+  width: 100%; /* La navbar prend toute la largeur */
+  padding: 10px; /* Ajoute un peu d'espace autour de la navbar */
+/* Bottom border line of the nav */
+  background-color: #ffffff; /* Background color of the navbar */
+ 
+}
+
+.profile-navbar {
+  background-color: #ffffff; /* Background color of the navbar */
+ /* Bottom border line of the nav */
+  padding: 0.5em 1em; /* Inner spacing around the nav items */
+  position: fixed; /* Fixed position to stick at the top */
+  top: 0; /* Aligns the navbar at the top */
+  left: 0; /* Aligns the navbar to the left */
+  width: 100%; /* Navbar width to cover full width of the viewport */
+  z-index: 1000; /* Ensures the navbar is above other content */
+ 
+}
+
+
+.profile-navbar ul {
+  list-style: none; /* Removes list bullets */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex display for a horizontal list */
+  align-items: center; /* Vertically centers the items */
+  justify-content: space-between; /* Distributes space around items */
+}
+
+/* Styling list items */
+.profile-navbar li {
+  margin: 0 1em; /* Margin around each list item */
+  
+}
+
+/* Styling links */
+.profile-navbar a {
+  direction: rtl;
+  text-decoration: none; /* Removes link underlines */
+  color: #54575a; /* Text color for links */
+  display: flex; /* Uses flex to align the icon and text */
+  align-items: center; /* Centers the link content vertically */
+}
+
+/* Styling the icon */
+.profile-navbar .fa {
+  margin-left: 0; /* Margin to the right of the icon for spacing from text */
+}
+
+/* Styling the link text */
+.profile-navbar .nav-text {
+  font-size: 1em; /* Font size for the link text */
+  font-weight: bold; /* Makes the link text bold */
+}
+
+/* Additional styles for hover and active states */
+.profile-navbar a:hover,
+.profile-navbar a:active {
+  color: #54575a; /* Changes link color on hover or when active */
+}
+
+
+
+.navbar-nav {
+  display: flex;
+  list-style: none; /* Enlève les puces */
+  padding: 0; /* Enlève le padding par défaut */
+  margin: 0; /* Enlève la marge par défaut */
+  width: 100%;
+}
+
+.nav-item {
+  margin-right: 10px; /* Espacement entre les éléments */
+}
+
+.language-selector {
+  margin-right: auto; /* Pousse tout ce qui est après vers la droite */
+}
+.navH {
+  list-style: none; /* Enlève les puces de la liste */
+  display: flex; /* Active Flexbox pour les éléments de la liste */
+  margin: 0; /* Enlève la marge par défaut */
+  padding: 0; /* Enlève le padding par défaut */
+  align-items: center; /* Centre les éléments de la liste verticalement */
+}
+
+.navH li {
+  margin-right: 10px; /* Ajoute de l'espace entre les éléments de la liste */
+}
+
+.nav-item {
+  text-decoration: none; /* Enlève le soulignement des liens */
+  color: inherit; /* Les liens héritent de la couleur du texte parent */
+}
+
+.fa-user {
+  margin-right: 0px; /* Ajoute un peu d'espace entre l'icône et le texte */
+}
+
+/* Styles spécifiques pour le sélecteur de langue */
+select[name="form-select"] {
+  padding: 5px 10px; /* Ajuste le padding du sélecteur pour mieux s'intégrer */
+  border: 1px solid #ccc; /* Donne une bordure légère */
+  border-radius: 5px; /* Bordures arrondies pour le sélecteur */
+}
+
+/* Réduit l'espace entre les éléments de la navbar et les bordures */
+.profile-navbar > .navH > li {
+  margin-right: 10px; /* Espacement réduit entre les éléments */
+}
+
+/* Style pour ajuster l'espace autour du texte de la navbar */
+.nav-text {
+  display: inline-block; /* Assure que le texte ne prend que l'espace nécessaire */
+  vertical-align: middle; /* Centre verticalement le texte avec les icônes */
+  font-size: medium;
+
+}
+
+
+/* Style général du menu déroulant */
+.has-subnav > .subnav {
+  display: none; /* Cache le sous-menu par défaut */
+  list-style-type: none; /* Enlève les puces */
+  padding-left: 0; /* Enlève le padding à gauche pour aligner avec le parent */
+}
+
+/* Style des éléments du sous-menu */
+.has-subnav > .subnav > li > a {
+  padding: 10px; /* Espacement autour du texte pour un meilleur clic */
+  color: #fff; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+  display: block; /* Les liens remplissent la largeur de l'élément li */
+  font-size: medium;
+}
+
+
+/* Icône de flèche pour indiquer un menu déroulant */
+.fa-chevron-down {
+  float: none; 
+  
+}

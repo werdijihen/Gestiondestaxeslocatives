@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.container {
+	direction: rtl; /* Right-to-left direction */
+	text-align: right;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+  }

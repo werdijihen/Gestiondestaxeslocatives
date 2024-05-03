@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+  
+}
+
+
+.main-content {
+  flex-grow: 1;
+  margin-top: 100px;
+}
+.main-content {
+  transition: margin .5s ease;
+  margin-right: 60px; /* Adjust based on your collapsed sidebar width */
+}
+
+/* Expanded state when sidebar is open */
+.main-content-expanded {
+  margin-right: 260px; /* Adjust based on your expanded sidebar width */
+}
